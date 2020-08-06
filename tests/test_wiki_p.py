@@ -2,20 +2,37 @@ import pytest
 from wiki_p import WikiP
 
 
-class MockPage:
+class PageMock:
     def __init__(self, title):
         self.title = title
         self.text = "<p>Hello</p> <p>World</p>"
 
+    @staticmethod
+    def exists():
+        return True
 
-class TestHandler:
-    def test_extract_paragraphs(self, mocker):
-        def page_mock(self, title):
-            return MockPage(title)
 
-        mocker.patch("wikipediaapi.Wikipedia.page", page_mock)
+@pytest.fixture
+def page_mock(monkeypatch):
+    def page(self, title):
+        return PageMock(title)
+    monkeypatch.setattr("wikipediaapi.Wikipedia.page", page)
+
+
+class TestWikiP:
+    def test_title(self, page_mock):
+        parser = WikiP("Hello")
+        assert parser.page.title == "Hello"
+
+    def test_is_valid(self, page_mock):
+        parser = WikiP("Hello")
+        assert parser.is_valid == True
+
+    def test_extract_paragraphs(self, page_mock):
         parser = WikiP("Hello")
         paragraphs = parser.extract_paragraphs()
-
-        assert parser.page.title == "Hello"
-        assert paragraphs == ["Hello", "World"]
+        expected = [
+            {"paragraph": "Hello"},
+            {"paragraph": "World"}
+        ]
+        assert paragraphs == expected
