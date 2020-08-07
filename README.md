@@ -1,3 +1,7 @@
+
+![CI](https://github.com/rrodrigu3z/wiki-p/workflows/CI/badge.svg)
+[![codecov.io](https://codecov.io/github/rrodrigu3z/wiki-p/coverage.svg?branch=master)](https://codecov.io/gh/rrodrigu3z/wiki-p/branch/master)
+
 # Wiki-P: Wikipedia article paragraph extractor
 
 A simple lambda function for extracting paragraphs from a Wikipedia article, or more specific, a wikipedia page title.

@@ -4,7 +4,7 @@ import json
 from wiki_p import WikiP
 
 
-def paragraphs(event, context): # pylint: disable=unused-argument
+def paragraphs(event, context):  # pylint: disable=unused-argument
     """Handles HTTP request and returns paragraphs"""
     parser = WikiP(event["title"])
     body = {"data": parser.extract_paragraphs()}

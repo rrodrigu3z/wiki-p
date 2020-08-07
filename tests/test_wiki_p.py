@@ -26,7 +26,7 @@ class TestWikiP:
 
     def test_is_valid(self, page_mock):
         parser = WikiP("Hello")
-        assert parser.is_valid == True
+        assert parser.is_valid is True
 
     def test_extract_paragraphs(self, page_mock):
         parser = WikiP("Hello")
