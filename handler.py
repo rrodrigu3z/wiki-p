@@ -6,8 +6,7 @@ from wiki_p import WikiP
 
 def paragraphs(event, context):  # pylint: disable=unused-argument
     """Handles HTTP request and returns paragraphs"""
-    body = json.loads(event)
-    parser = WikiP(body["title"])
+    parser = WikiP(event["title"])
     body = {"data": parser.extract_paragraphs()}
     headers = {"Access-Control-Allow-Origin": "*"}
 

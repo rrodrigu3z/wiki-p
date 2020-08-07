@@ -12,7 +12,7 @@ def parapgraps_mock(monkeypatch):
 
 @pytest.fixture
 def body():
-    return json.dumps({"title": "Hello_world"})
+    return {"title": "Hello_world"}
 
 
 class TestHandler:
