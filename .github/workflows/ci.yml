@@ -43,7 +43,7 @@ jobs:
         node-version: '12'
     - run: npm install
     - name: serverless deploy
-      uses: serverless/github-action@master
+      uses: jackdcasey/github-action@python3.8-nodejs13
       with:
         args: deploy
       env:
