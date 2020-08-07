@@ -5,7 +5,7 @@ from wiki_p import WikiP
 class PageMock:
     def __init__(self, title):
         self.title = title
-        self.text = "<p>Hello</p> <p>World</p>"
+        self.text = "<p>Hello</p> <p>World</p> <p> \n \n </p>"
 
     @staticmethod
     def exists():

@@ -31,11 +31,12 @@ class WikiP:
 
         """
         soup = BeautifulSoup(self.page.text, "html.parser")
-        return [self._format_p(p.text) for p in soup.find_all("p")]
+        paragraphs = [self._format_p(p.text) for p in soup.find_all("p")]
+        return list(filter(lambda p: p["paragraph"], paragraphs))
 
     @staticmethod
     def _format_p(text):
-        return {"paragraph": text}
+        return {"paragraph": text.strip()}
 
     @staticmethod
     def _wiki_api(lang):
