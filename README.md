@@ -1,6 +1,6 @@
 
 ![CI](https://github.com/rrodrigu3z/wiki-p/workflows/CI/badge.svg)
-[![codecov.io](https://codecov.io/github/rrodrigu3z/wiki-p/coverage.svg?branch=master)](https://codecov.io/gh/rrodrigu3z/wiki-p/branch/master)
+[![codecov](https://codecov.io/gh/rrodrigu3z/wiki-p/branch/master/graph/badge.svg?token=1IKG6EXSCI)](https://codecov.io/gh/rrodrigu3z/wiki-p)
 
 # Wiki-P: Wikipedia article paragraph extractor
 
