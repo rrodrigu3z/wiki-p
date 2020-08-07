@@ -11,20 +11,20 @@ def parapgraps_mock(monkeypatch):
 
 
 @pytest.fixture
-def body():
-    return {"title": "Hello_world"}
+def event():
+    return {"body": json.dumps({"title": "Hello_world"})}
 
 
 class TestHandler:
-    def test_response_code(self, body, parapgraps_mock):
-        response = paragraphs(body, {})
+    def test_response_code(self, event, parapgraps_mock):
+        response = paragraphs(event, {})
         assert response["statusCode"] == 200
 
-    def test_response_body(self, body, parapgraps_mock):
-        response = paragraphs(body, {})
+    def test_response_body(self, event, parapgraps_mock):
+        response = paragraphs(event, {})
         items = [{"paragraph": "Hello"}, {"paragraph": "World"}]
         assert response["body"] == json.dumps({"data": items})
 
-    def test_cors_headers(self, body, parapgraps_mock):
-        response = paragraphs(body, {})
+    def test_cors_headers(self, event, parapgraps_mock):
+        response = paragraphs(event, {})
         assert response["headers"] == {"Access-Control-Allow-Origin": "*"}
