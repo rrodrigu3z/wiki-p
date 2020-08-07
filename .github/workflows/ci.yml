@@ -38,10 +38,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: npm install
-      uses: actions/npm@master
+    - uses: actions/setup-node@v1
       with:
-        args: install
+        node-version: '12'
+    - run: npm install
     - name: serverless deploy
       uses: serverless/github-action@master
       with:
