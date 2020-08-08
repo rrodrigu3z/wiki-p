@@ -23,6 +23,8 @@ service: wiki-p
 provider:
   name: aws
   runtime: python3.8
+  logs:
+    restApi: true
 
 # you can overwrite defaults here
 #  stage: dev
