@@ -1,6 +1,7 @@
 
 ![CI](https://github.com/rrodrigu3z/wiki-p/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/rrodrigu3z/wiki-p/branch/master/graph/badge.svg?token=1IKG6EXSCI)](https://codecov.io/gh/rrodrigu3z/wiki-p)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/rrodrigu3z/wiki-p.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/rrodrigu3z/wiki-p/context:python)
 
 # Wiki-P: Wikipedia article paragraph extractor
 
